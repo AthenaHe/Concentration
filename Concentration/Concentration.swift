@@ -8,9 +8,10 @@
 
 import Foundation
 
-class Concentration//翻牌游戏
+class Concentration//翻牌游戏//🐨
+    
 {
-    var cards = [Card]() //定义一个cards数组，类型是Cardl类型
+    var cards = [Card]() //定义一个cards数组，类型是Card
     var indexOfOneAndOnlyFaceUpCard: Int?
     
     func chooseCard(at index:Int){ //选择卡牌动作
