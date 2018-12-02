@@ -9,7 +9,7 @@
 import Foundation
 
 // 😁😆
-class Concentration//翻牌游戏🐨🐛
+class Concentration//翻牌游戏🐨🐛等会删掉
     
 {
     var cards = [Card]() //定义一个cards数组，类型是Card
