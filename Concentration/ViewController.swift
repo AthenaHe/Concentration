@@ -7,6 +7,10 @@
 //
 
 import UIKit
+
+
+// 你好啊, 豆子😆😆😆😆
+
 //按住commad可以rename
  class ViewController: UIViewController {
     
