@@ -22,10 +22,14 @@ import UIKit
     }
     @IBOutlet weak  var flipCountLabel: UILabel! //展示翻牌次数
     @IBOutlet  var cardButtons: [UIButton]!  //UIButton数组
+    
+    // 🎾🎾 Controller层: 触发游戏
     @IBAction  func touchCard(_ sender: UIButton) { //点击卡牌事件
         flipCount += 1 //翻牌次数加一
         if let cardNumber = cardButtons.index(of: sender) { //每个卡牌数字号就是对应cardButtons下标
+            // 🎾🎾 Model层: 游戏核心逻辑与数据运算
             game.chooseCard(at: cardNumber) //游戏开始，点中一张卡牌
+            // 🎾🎾 View层: 把数据渲染到视图上
             upadateViewFromModel() //更新视图
         }else{
             print("chosen card was not in cardButtons")
