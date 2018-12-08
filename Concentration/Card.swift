@@ -14,9 +14,9 @@ struct Card { //卡片属性
     var isMatched = false //是否匹配：刚开始未有匹配
     var identifier: Int  //卡片标识符，唯一
     
-    static var identifierFactory = 0  //卡片标识符
+   private static var identifierFactory = 0  //卡片标识符
     
-    static func getUniqueIdentifier() -> Int { //唯一标识符
+   private static func getUniqueIdentifier() -> Int { //唯一标识符
         identifierFactory += 1
         return identifierFactory  //唯一的设置就是每次加1，这样就不会有一样的id啦
     }
