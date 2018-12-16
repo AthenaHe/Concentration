@@ -10,16 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     
     //TODO: 启动游戏
-    var numberOfPairsOfCards:Int{ //🍎卡牌对数
-        return (cardButtons.count + 1) / 2
-    }
+//    var numberOfPairsOfCards:Int{ //🍎卡牌对数
+//        return (cardButtons.count + 1) / 2
+//    }
     
-    
-    private lazy var game = Concentration(numberOfPairsOfCards : numberOfPairsOfCards )
+    private lazy var game = Concentration(numberOfPairsOfCards : (cardButtons.count + 1) / 2, delegate: gameOrder )
     
     private lazy var gameTheme = GameTheme()
     
     private lazy var gameOrder = GameOrder()
+    
     
     
     

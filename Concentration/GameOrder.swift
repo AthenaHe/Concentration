@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK:  🍋  🍎🍎🍎分数奖惩制度
-class GameOrder: ConcentrationDelegate {
+class GameOrder: ConcentrationDelegate { //第三步
     
     static var flipCount = 0
     static var score = 1000000
@@ -34,6 +34,16 @@ class GameOrder: ConcentrationDelegate {
         print("🍋2")
         game.cards.shuffle()  //🍎洗牌
         print("🍋3")
+    }
+    //第四步
+    func  gameInit(numberOfPairsOfCards:Int,_ game: Concentration)  {
+                assert(numberOfPairsOfCards > 0,
+                       "Concentration.init(\(numberOfPairsOfCards)) : You must have at least one pair of cards")//创建卡牌是必须一对一对的，要不然怎么匹配呢
+                for _ in 1...numberOfPairsOfCards{
+                    let card = Card()
+                    game.cards += [card,card]
+        
+                }
     }
     
     
