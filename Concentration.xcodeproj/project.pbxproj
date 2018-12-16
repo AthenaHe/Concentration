@@ -66,10 +66,10 @@
 			children = (
 				829F01ED21B3631D00857137 /* Info.plist */,
 				829F01E521B3631D00857137 /* Main.storyboard */,
-				829F01F421B37C9000857137 /* Concentration.swift */,
 				829F01E321B3631D00857137 /* ViewController.swift */,
-				4C9B318421C6146600792F1C /* GameTheme.swift */,
+				829F01F421B37C9000857137 /* Concentration.swift */,
 				4C9B318621C6149300792F1C /* GameOrder.swift */,
+				4C9B318421C6146600792F1C /* GameTheme.swift */,
 				829F01F621B37E9500857137 /* Card.swift */,
 				4C9B318221C610C800792F1C /* Extensions.swift */,
 				829F01F321B3643B00857137 /* Supporting Files */,

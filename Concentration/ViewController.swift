@@ -9,15 +9,17 @@
 import UIKit
 class ViewController: UIViewController {
     
-    //FIXME: 启动游戏
+    //TODO: 启动游戏
     var numberOfPairsOfCards:Int{ //🍎卡牌对数
         return (cardButtons.count + 1) / 2
     }
     
-    //FIXME: 启动游戏
+    
     private lazy var game = Concentration(numberOfPairsOfCards : numberOfPairsOfCards )
     
     private lazy var gameTheme = GameTheme()
+    
+    private lazy var gameOrder = GameOrder()
     
     
     
@@ -36,15 +38,23 @@ class ViewController: UIViewController {
     //🍎🍎🍎初始化游戏模式
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        game.guanjia = gameOrder //🍋 delegate很多都写在这个位置
+        
         reset()
     }
     
+    // MARK: 核心逻辑
     func reset(){
-        game.resetGame()
-        gameTheme.resetGameTheme()
-        updateViewFromGameModel()
-        updateViewFromGameTheme()
+        game.resetGame() //Model 1   //🍋 老板说:  开车/开始写代码
+        
+        gameTheme.resetGameTheme() //Model 2
+        
+        updateViewFromGameModel() //View 1
+        
+        updateViewFromGameTheme() //View 2
     }
+    
     
     // 🎾🎾 Controller层: 触发游戏   ?????????
     //🍎🍎🍎点击卡牌事件
@@ -74,8 +84,8 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0) : #colorLiteral(red: 1, green: 0.44582057, blue: 0.4437403977, alpha: 1)//卡牌背景色
                 
             }
-            scoreLabel.text = "Score: \(game.score)"
-            flipCountLabel.text = "Flips: \(game.flipCount)"
+            scoreLabel.text = "Score: \(GameOrder.score)"
+            flipCountLabel.text = "Flips: \(GameOrder.flipCount)"
         }
     }
     
@@ -90,7 +100,6 @@ class ViewController: UIViewController {
         resetButton.backgroundColor = gameTheme.cardBackColor
         titleLabel.text = gameTheme.title
     }
-    
     
 }
 
