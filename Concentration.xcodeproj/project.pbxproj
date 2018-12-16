@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C9B318321C610C800792F1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B318221C610C800792F1C /* Extensions.swift */; };
+		4C9B318521C6146600792F1C /* GameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B318421C6146600792F1C /* GameTheme.swift */; };
+		4C9B318721C6149300792F1C /* GameOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B318621C6149300792F1C /* GameOrder.swift */; };
 		829F01E221B3631D00857137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F01E121B3631D00857137 /* AppDelegate.swift */; };
 		829F01E421B3631D00857137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829F01E321B3631D00857137 /* ViewController.swift */; };
 		829F01E721B3631D00857137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829F01E521B3631D00857137 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		4C9B318221C610C800792F1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4C9B318421C6146600792F1C /* GameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTheme.swift; sourceTree = "<group>"; };
+		4C9B318621C6149300792F1C /* GameOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOrder.swift; sourceTree = "<group>"; };
 		829F01DE21B3631D00857137 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		829F01E121B3631D00857137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829F01E321B3631D00857137 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,8 +66,10 @@
 			children = (
 				829F01ED21B3631D00857137 /* Info.plist */,
 				829F01E521B3631D00857137 /* Main.storyboard */,
-				829F01E321B3631D00857137 /* ViewController.swift */,
 				829F01F421B37C9000857137 /* Concentration.swift */,
+				829F01E321B3631D00857137 /* ViewController.swift */,
+				4C9B318421C6146600792F1C /* GameTheme.swift */,
+				4C9B318621C6149300792F1C /* GameOrder.swift */,
 				829F01F621B37E9500857137 /* Card.swift */,
 				4C9B318221C610C800792F1C /* Extensions.swift */,
 				829F01F321B3643B00857137 /* Supporting Files */,
@@ -154,9 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9B318321C610C800792F1C /* Extensions.swift in Sources */,
+				4C9B318521C6146600792F1C /* GameTheme.swift in Sources */,
 				829F01E421B3631D00857137 /* ViewController.swift in Sources */,
 				829F01E221B3631D00857137 /* AppDelegate.swift in Sources */,
 				829F01F521B37C9100857137 /* Concentration.swift in Sources */,
+				4C9B318721C6149300792F1C /* GameOrder.swift in Sources */,
 				829F01F721B37E9500857137 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
