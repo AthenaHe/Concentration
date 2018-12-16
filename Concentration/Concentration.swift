@@ -40,6 +40,7 @@ class Concentration{
             }
         }
     }
+    
     //🍎🍎🍎点击卡牌动作
     func chooseCard(at index:Int){
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)) : Choosen index out of range")//防止有人选择的index不在正常范围内，捕捉异常

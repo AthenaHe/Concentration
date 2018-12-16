@@ -10,12 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     
     //FIXME: 启动游戏
-    private lazy var game = Concentration(numberOfPairsOfCards : numberOfPairsOfCards )
+    var numberOfPairsOfCards:Int{ //🍎卡牌对数
+        return (cardButtons.count + 1) / 2
+    }
     
     //FIXME: 启动游戏
-    var numberOfPairsOfCards:Int{ //🍎卡牌对数
-        return (cardButtons.count+1) / 2
-    }
+    private lazy var game = Concentration(numberOfPairsOfCards : numberOfPairsOfCards )
+    
+    private lazy var gameTheme = GameTheme()
+    
+    
     
     @IBOutlet private weak  var flipCountLabel: UILabel! //🍎展示翻牌次数
     @IBOutlet private var cardButtons: [UIButton]!//🍎卡牌按钮们
@@ -23,21 +27,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!//🍎展示当前游戏主题
     @IBOutlet weak var resetButton: UIButton! //🍎重置按钮
     
+    
     //🍎🍎🍎新游戏
     @IBAction func newGame() {
-        game.resetGame()
-        gameTheme.indexTheme = gameTheme.keys.count.arc4random
-        if true{
-            updateAppearance()
-        }
-        upadateViewFromModel()
+        reset()
     }
     
     //🍎🍎🍎初始化游戏模式
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameTheme.indexTheme =  gameTheme.keys.count.arc4random
-        upadateViewFromModel()
+        reset()
+    }
+    
+    func reset(){
+        game.resetGame()
+        gameTheme.resetGameTheme()
+        updateViewFromGameModel()
+        updateViewFromGameTheme()
     }
     
     // 🎾🎾 Controller层: 触发游戏   ?????????
@@ -47,15 +53,14 @@ class ViewController: UIViewController {
             // 🎾🎾 Model层: 游戏核心逻辑与数据运算
             game.chooseCard(at: cardNumber) //游戏开始，点中一张卡牌
             // 🎾🎾 View层: 把数据渲染到视图上
-            upadateViewFromModel()
+            updateViewFromGameModel()
         }else{
             print("chosen card was not in cardButtons")
         }
-        
     }
     
     //🍎🍎🍎更新视图
-    private func upadateViewFromModel(){
+    private func updateViewFromGameModel(){
         for index in cardButtons.indices{
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -74,10 +79,9 @@ class ViewController: UIViewController {
         }
     }
     
-    lazy var gameTheme = GameTheme()
     
     //🍎🍎🍎更新游戏外观
-    private func updateAppearance() {
+    private func updateViewFromGameTheme() {
         view.backgroundColor = gameTheme.backgroundColor
         flipCountLabel.textColor = gameTheme.cardBackColor
         scoreLabel.textColor = gameTheme.cardBackColor

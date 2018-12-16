@@ -20,7 +20,7 @@ class GameTheme {
     }
     
     
-    //🍎🍎🍎设置游戏主题
+    //🍎🍎🍎设置游戏主题  //🍋定义一个新的类, 这里类似一个元组 ([String], UIColor, UIColor)
     typealias Theme = (emojiChoices: [String], backgroundColor: UIColor, cardBackColor: UIColor)
     
     //🍎🍎🍎设置表情主题
@@ -52,5 +52,9 @@ class GameTheme {
     var backgroundColor = UIColor.black//屏幕背景颜色
     var cardBackColor = UIColor.orange//卡牌背景颜色
     var title = "None"
+    
+    func resetGameTheme(){
+        indexTheme = keys.count.arc4random
+    }
     
 }
