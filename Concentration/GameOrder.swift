@@ -22,13 +22,10 @@ class GameOrder: ConcentrationDelegate {
     
     
     //
-    
-    
-    
     func startNewGame(_ game: Concentration) {
         GameOrder.flipCount = 0
         print("🍋1")
-        GameOrder.score = 99 //
+        GameOrder.score = 88 //
         game.seenCards = []
         for index in game.cards.indices  {
             game.cards[index].isFaceUp = false
