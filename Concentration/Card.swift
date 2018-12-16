@@ -22,5 +22,9 @@ struct Card { //卡片属性
     }
     init() {
         self.identifier = Card.getUniqueIdentifier() //设置卡片标志符
+        
+        
+        print("============"+"\(self.identifier)")
+
     }
 }
