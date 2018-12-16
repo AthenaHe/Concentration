@@ -98,16 +98,6 @@ class Concentration{
     }
 }
 
-//🍎🍎🍎扩展数组功能:重新洗牌
-extension Array {
-    mutating func shuffle() {
-        if count < 2 { return }
-        for i in indices.dropLast() {
-            let diff = distance(from: i, to: endIndex)
-            let j = index(i, offsetBy: diff.arc4random)
-            swapAt(i, j)
-        }
-    }
-}
+
 
 
