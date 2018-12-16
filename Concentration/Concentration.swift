@@ -11,7 +11,7 @@ import Foundation
 
 protocol ConcentrationDelegate: class {
     func startNewGame(_ game: Concentration)//第一步
-    func gameInit(numberOfPairsOfCards:Int,_ game: Concentration)
+    //func gameInit(numberOfPairsOfCards:Int,_ game: Concentration)
 }
 
 
@@ -92,17 +92,17 @@ class Concentration{
     
     
     //🍎🍎🍎卡牌初始化，
-    init(numberOfPairsOfCards:Int,delegate:ConcentrationDelegate) {//numberOfPairsOfCards卡片对数的数量
+    init(numberOfPairsOfCards:Int) {//numberOfPairsOfCards卡片对数的数量
        //第五步
-        delegate.gameInit(numberOfPairsOfCards: numberOfPairsOfCards, self)
-  //        assert(numberOfPairsOfCards > 0,
-//               "Concentration.init(\(numberOfPairsOfCards)) : You must have at least one pair of cards")//创建卡牌是必须一对一对的，要不然怎么匹配呢
-//        for _ in 1...numberOfPairsOfCards{
-//            let card = Card()
-//            cards += [card,card]
-//
-//        }
-//        cards.shuffle()
+        //delegate.gameInit(numberOfPairsOfCards: numberOfPairsOfCards, self)
+          assert(numberOfPairsOfCards > 0,
+               "Concentration.init(\(numberOfPairsOfCards)) : You must have at least one pair of cards")//创建卡牌是必须一对一对的，要不然怎么匹配呢
+        for _ in 1...numberOfPairsOfCards{
+            let card = Card()
+            cards += [card,card]
+
+        }
+        cards.shuffle()
     }
 }
 

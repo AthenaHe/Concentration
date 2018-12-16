@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 //        return (cardButtons.count + 1) / 2
 //    }
     
-    private lazy var game = Concentration(numberOfPairsOfCards : (cardButtons.count + 1) / 2, delegate: gameOrder )
+    private lazy var game = Concentration(numberOfPairsOfCards : (cardButtons.count + 1) / 2)
     
     private lazy var gameTheme = GameTheme()
     
