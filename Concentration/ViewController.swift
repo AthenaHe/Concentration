@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp{//卡牌被翻开
-                button.setTitle(gameTheme.emoji(for:card),for: UIControlState.normal)
+                button.setTitle(gameTheme.setEmoji(for:card),for: UIControlState.normal)
                 print("-----------------------")
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             }else{
