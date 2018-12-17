@@ -9,13 +9,9 @@
 import UIKit
 class ViewController: UIViewController {
     
-    //TODO: 启动游戏
-    var numberOfPairsOfCards:Int{ //🍎卡牌对数
-        return (cardButtons.count + 1) / 2
-    }
     
-    
-    private lazy var game = Concentration(numberOfPairsOfCards : numberOfPairsOfCards )
+    private lazy var game = Concentration(
+        numberOfPairsOfCards: (cardButtons.count + 1) / 2    )
     
     private lazy var gameTheme = GameTheme()
     
@@ -30,22 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton! //🍎重置按钮
     
     
-    //🍎🍎🍎新游戏
+    //🍎🍎🍎新游戏 // MARK: 🍋核心逻辑
     @IBAction func newGame() {
-        reset()
-    }
-    
-    //🍎🍎🍎初始化游戏模式
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        game.guanjia = gameOrder //🍋 delegate很多都写在这个位置
-        
-        reset()
-    }
-    
-    // MARK: 核心逻辑
-    func reset(){
         game.resetGame() //Model 1   //🍋 老板说:  开车/开始写代码
         
         gameTheme.resetGameTheme() //Model 2
@@ -53,6 +35,14 @@ class ViewController: UIViewController {
         updateViewFromGameModel() //View 1
         
         updateViewFromGameTheme() //View 2
+    }
+    
+    //🍎🍎🍎初始化游戏模式
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        game.guanjia = gameOrder //🍋 delegate很多都写在这个位置的第一行
+        
+        newGame()
     }
     
     
